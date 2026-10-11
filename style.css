@@ -1,0 +1,72 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f5f5fb;--card:#fff;--ink:#14213d;--mute:#5b6577;--line:#d8dee7;--ok:#15803d;--okbg:#e3f5ea;--pu:#5b21b6;--pubg:#efe9fb;--warn:#9a5b00;--warnbg:#fdf1dc;--bad:#b42318;--badbg:#fde8e6}
+:root[data-theme="dark"]{--bg:#140f26;--card:#1e1836;--ink:#e8edf5;--mute:#9aa7bb;--line:#372d5c;--ok:#4ade80;--okbg:#12311f;--pu:#c4b5fd;--pubg:#2d1f5e;--warn:#f0b35a;--warnbg:#33260f;--bad:#ff8a80;--badbg:#3a1815}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140f26;--card:#1e1836;--ink:#e8edf5;--mute:#9aa7bb;--line:#372d5c;--ok:#4ade80;--okbg:#12311f;--pu:#c4b5fd;--pubg:#2d1f5e;--warn:#f0b35a;--warnbg:#33260f;--bad:#ff8a80;--badbg:#3a1815}}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+.ring{position:relative;width:104px;height:104px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .t{stroke:var(--line)}.ring .p{stroke:var(--ok);stroke-linecap:round;transition:stroke-dashoffset .5s}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:22px}
+h1{font-size:24px;line-height:1.2;margin:0 0 4px}
+header p{margin:0;color:var(--mute);font-size:14px}
+.sealed{color:var(--ok);font-weight:700}
+nav{display:flex;gap:6px;overflow-x:auto;margin-bottom:14px;padding-bottom:2px}
+nav button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:500;padding:8px 12px;border-radius:8px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav small{opacity:.75;margin-left:6px}
+:focus-visible{outline:3px solid var(--ok);outline-offset:2px}
+section.g{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:12px}
+h2{font-size:16px;margin:0 0 2px}
+.sub{color:var(--mute);font-size:13px;margin:0 0 8px}
+.bar{height:5px;background:var(--line);border-radius:3px;margin:8px 0 6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.r{border-top:1px solid var(--line);padding:8px 0}.bar+.r{border-top:0}
+.it{display:flex;gap:10px;align-items:flex-start}
+label.ck{display:flex;gap:10px;flex:1;cursor:pointer}
+label.ck input{margin-top:3px;width:18px;height:18px;accent-color:var(--ok);flex:none}
+label.ck input:checked+span{color:var(--mute);text-decoration:line-through}
+.info{margin:4px 0 0;padding-left:20px;color:var(--mute);font-size:14px}.info li{margin:3px 0}
+.req{color:var(--bad);margin-left:4px;font-weight:700;display:inline-block;text-decoration:none}
+.att{flex:none;font-size:12px;border:1px solid var(--ok);color:var(--ok);border-radius:6px;padding:3px 9px;cursor:pointer;font-weight:500}
+.fl{margin:6px 0 0 28px;padding:0;list-style:none;font-size:13px}.fl li{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.fl a{color:var(--ok);word-break:break-all}.fl button{border:0;background:none;color:var(--bad);cursor:pointer;font:inherit;font-size:12px}
+.note{border-radius:8px;padding:9px 12px;font-size:13px;margin:0 0 12px}
+.note.w{background:var(--warnbg);color:var(--warn)}.note.b{background:var(--badbg);color:var(--bad)}.note.o{background:var(--okbg);color:var(--ok)}
+select,input[type=text]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:100%}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.btn{font:inherit;font-weight:500;border:0;border-radius:8px;padding:8px 14px;background:var(--ok);color:#fff;cursor:pointer}
+.btn.l{background:transparent;color:var(--mute);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:6px 8px;border:1px solid var(--line);text-align:center}th{background:var(--bg)}td:first-child,th:first-child{text-align:left}
+.wrap{overflow-x:auto}
+.log{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.log button{border:0;background:none;color:var(--bad);cursor:pointer;font:inherit}
+.total{font-size:22px;font-weight:700;color:var(--ok)}
+footer{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--mute);font-size:12px;margin-top:18px}
+
+/* CampusLog-style app look: indigo banner, rounded cards, bottom tab bar */
+main{max-width:640px;padding-bottom:96px}
+header{background:#4c1d95;color:#fff;margin:-20px -16px 18px;padding:22px 20px 24px;border-radius:0 0 26px 26px}
+header h1{color:#fff}header p,header .sealed{color:rgba(255,255,255,.85)}
+.ring .t{stroke:rgba(255,255,255,.25)}.ring .p{stroke:#4ade80}.ring b{color:#fff}
+section.g{border-radius:16px;box-shadow:0 1px 3px rgba(76,29,149,.1)}
+.btn{background:#5b21b6;color:#fff}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:5;margin:0;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));gap:4px;overflow:visible;background:var(--card);border-top:1px solid var(--line)}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;border:0;background:none;color:var(--mute);padding:8px 4px;font-size:13px;border-radius:12px}
+nav button[aria-selected=true]{background:var(--pubg);color:var(--pu);border-color:transparent;font-weight:700}
+nav small{margin:0;font-size:11px}
+.att{border-color:var(--pu);color:var(--pu)}
+.fl a{color:var(--pu)}
+.note.o{background:var(--pubg);color:var(--pu)}
+.brand{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,.9)}
+.brand img{border-radius:50%;background:#fff;border:2px solid rgba(255,255,255,.7);flex:none}
+
+/* Logo as page background (faint watermark) */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(logo-bg.webp) center 58%/min(92vw,640px) no-repeat;opacity:.16}
+@media (prefers-color-scheme:dark){body::before{opacity:.12}}
+:root[data-theme="dark"] body::before{opacity:.12}
+section.g,.note{background:color-mix(in srgb,var(--card) 84%,transparent)}
+.note.w{background:var(--warnbg)}.note.b{background:var(--badbg)}.note.o{background:var(--pubg)}
